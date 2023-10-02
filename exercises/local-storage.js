@@ -88,7 +88,16 @@ function cardClick(e) {
 container.addEventListener('click', cardClick);
 
 
-
+window.onload = function () {
+	const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+	for (const cardId of favorites) {
+		const card = document.getElementById(cardId);
+		if (card) {
+			card.setAttribute('data-fav', 'true');
+			card.style.backgroundColor = 'red';
+		}
+	}
+}
 
 
 
