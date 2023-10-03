@@ -75,7 +75,7 @@ function cardClick(e) {
 
 	if (card.classList.contains('card')) {
 		const cardId = card.id;
-		const isFav = card.getAt('data-fav') === 'true';
+		const isFav = card.getAttribute('data-fav') === 'true';
 
 		if (isFav) {
 			removeFromFavorites(cardId);
